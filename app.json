@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "CoasterForce",
-    "slug": "coasterforce-app",
+    "name": "DevCorps",
+    "slug": "devcorps-app",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -23,10 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "io.coasterforce.CoasterForceExpo"
+      "bundleIdentifier": "io.devcorps.DevCorpsExpo"
     },
     "android": {
-      "package": "io.coasterforce.CoasterForceExpo"
+      "package": "io.devcorps.DevCorpsExpo"
     }
   }
 }
