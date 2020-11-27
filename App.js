@@ -6,6 +6,10 @@ import Card from "./Components/Card";
 import * as Icon from "@expo/vector-icons";
 import { NotificationIcon } from "./Components/Icons";
 import Logo from "./Components/Logo";
+import { logos } from "./assets/staticData/Logos";
+import { cards } from "./assets/staticData/Cards";
+import { courses } from "./assets/staticData/Courses";
+import Course from "./Components/Course";
 
 const Container = styled.View`
   flex: 1;
@@ -73,11 +77,9 @@ export default function App() {
               paddingTop: 30,
             }}
           >
-            <Logo
-              image={require("./assets/logo-framerx.png")}
-              text="Framer X"
-            />
-            <Logo image={require("./assets/logo-figma.png")} text="Figma" />
+            {logos.map((logo, index) => (
+              <Logo key={index} image={logo.image} text={logo.text} />
+            ))}
           </ScrollView>
           <Subtitle>Continue learning...</Subtitle>
           <ScrollView
@@ -85,20 +87,35 @@ export default function App() {
             showsHorizontalScrollIndicator={false}
             style={{ paddingBottom: 30 }}
           >
-            <Card
-              title="Styled Components"
-              image={require("./assets/background2.jpg")}
-              caption="React Native"
-              logo={require("./assets/logo-react.png")}
-              subtitle="1 of 12 sections"
-            />
-            <Card
-              title="Styled Components 2"
-              image={require("./assets/background1.jpg")}
-              caption="React Native"
-              logo={require("./assets/logo-react.png")}
-              subtitle="0 of 12 sections"
-            />
+            {cards.map((card, index) => (
+              <Card
+                key={index}
+                title={card.title}
+                image={card.image}
+                caption={card.caption}
+                logo={card.logo}
+                subtitle={card.subtitle}
+              />
+            ))}
+          </ScrollView>
+          <Subtitle>Popular Courses</Subtitle>
+          <ScrollView
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            style={{ paddingBottom: 30 }}
+          >
+            {courses.map((course, index) => (
+              <Course
+                key={index}
+                image={course.image}
+                title={course.title}
+                subtitle={course.subtitle}
+                logo={course.logo}
+                author={course.author}
+                avatar={course.avatar}
+                caption={course.caption}
+              />
+            ))}
           </ScrollView>
         </ScrollView>
       </SafeAreaView>
